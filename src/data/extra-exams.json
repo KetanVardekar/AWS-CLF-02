@@ -5,107 +5,759 @@
     "questions": [
       {
         "question": "Your customer wants to know how security and compliance is shared between AWS and the customer. Under the AWS Shared Responsibility Model, what are your suggested shared controls between the customer and AWS? (Select TWO)",
-        "options": ["Patch Management", "Awareness and Training", "Data Encryption", "Physical and Environmental controls", "Identity and access management"],
-        "answer": [0, 1],
-        "explanation": "AWS lists three shared controls: Patch Management, Configuration Management, and Awareness & Training. Physical controls are AWS only; data encryption and IAM are the customer's responsibility.",
-        "link": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+        "options": [
+          "Patch Management",
+          "Awareness and Training",
+          "Data Encryption",
+          "Physical and Environmental controls",
+          "Identity and access management"
+        ],
+        "answer": [
+          0,
+          1
+        ],
+        "link": ""
       },
       {
         "question": "A company would like to monitor all of the API activity inside their AWS account. Which AWS service would track the API activity?",
-        "options": ["AWS CloudTrail", "Amazon CloudWatch", "Amazon Inspector", "Amazon CloudFront"],
-        "answer": [0],
-        "explanation": "API activity / who did what → CloudTrail. CloudWatch is metrics and alarms, Inspector scans for vulnerabilities, CloudFront is a CDN.",
+        "options": [
+          "AWS CloudTrail",
+          "Amazon CloudWatch",
+          "Amazon Inspector",
+          "Amazon CloudFront"
+        ],
+        "answer": [
+          0
+        ],
         "link": ""
       },
       {
-        "question": "A customer would like to design and build a new workload on the AWS Cloud but does not have the AWS expertise to get started. Which AWS program can a customer take advantage of to achieve that outcome?",
-        "options": ["AWS technical account managers (TAMs)", "AWS Marketplace", "AWS Support", "AWS Partner Network (APN) Consulting Partners"],
-        "answer": [3],
-        "explanation": "No in-house expertise + need someone to design and build → APN Consulting Partners. TAMs and Support give guidance, they don't build your workload.",
-        "link": ""
-      },
-      {
-        "question": "Your company is currently hosting its data and services in the AWS Cloud and wants help to control cost and spend. Which AWS service can help with this?",
-        "options": ["AWS Budgets", "Billing Dashboard", "AWS CloudWatch", "AWS Support Plans"],
-        "answer": [0],
-        "explanation": "Control spend / alert on thresholds → AWS Budgets. The Billing Dashboard only shows spend; it doesn't help you control it.",
-        "link": ""
-      },
-      {
-        "question": "Your organization is planning to migrate its on-premises infrastructure to the cloud. You are currently reviewing cloud service providers (CSPs) and want to ensure that your organization gets the best fit with a CSP and the most favorable terms and conditions. Which of the following is a key consideration when evaluating a CSP's terms and conditions?",
-        "options": ["Engage CSPs early to get the best fit and resolve any differences.", "Skip terms and conditions, as these are typically used minimally and are more of a legal formality.", "Recognize that all CSPs generally have the same terms and conditions.", "Reuse traditional IT contract terms to facilitate the process."],
-        "answer": [0],
-        "explanation": "Engaging CSPs early lets you understand their terms and negotiate differences. Terms differ between providers, and old on-premises contract terms don't fit cloud services.",
-        "link": ""
-      },
-      {
-        "question": "Your company is preparing for the holiday shopping season where there will be an increase in traffic and customer orders for its Amazon EC2-hosted applications. What service can be used to enable optimal availability to handle the increased traffic?",
-        "options": ["Amazon RDS", "Amazon EC2 Auto Scaling", "AWS CloudWatch", "AWS Lambda"],
-        "answer": [1],
-        "explanation": "Traffic spike on EC2 → EC2 Auto Scaling adds instances when demand rises and removes them afterwards.",
-        "link": ""
-      },
-      {
-        "question": "A multinational company decides to move all its on-premises infrastructure to the AWS Cloud. Which AWS Support Plan includes access to a Technical Account Manager (TAM)?",
-        "options": ["Business Support", "Basic Support", "Developer Support", "Enterprise Support"],
-        "answer": [3],
-        "explanation": "Designated TAM → Enterprise Support. Business, Developer and Basic plans don't include a TAM.",
-        "link": ""
-      },
-      {
-        "question": "An e-commerce company is looking to migrate some of its workloads to AWS. While planning the migration, the CTO has asked if AWS handles patching for the operating system running on the Amazon EC2 instances. Which option can provide clarity to the CTO?",
-        "options": ["Cloud computing deployment models", "AWS Cloud Adoption Framework", "AWS Well-Architected Framework", "AWS Shared Responsibility Model"],
-        "answer": [3],
-        "explanation": "Who patches what → Shared Responsibility Model. For EC2, the customer patches the guest OS; AWS handles the underlying infrastructure.",
-        "link": ""
-      },
-      {
-        "question": "Your e-commerce website has been experiencing slow load times and high latency, especially for customers in regions that are far away from your server location. Which AWS service uses Edge Locations to reduce latency?",
-        "options": ["Amazon Elastic Load Balancing", "AWS Direct Connect", "Amazon CloudFront", "AWS CloudTrail"],
-        "answer": [2],
-        "explanation": "Edge Locations + lower latency for distant users → CloudFront, which caches content close to users.",
-        "link": ""
-      },
-      {
-        "question": "An organization is looking to expand its presence and revenue in the AWS ecosystem. Which benefit of joining the Amazon Partner Network (APN) would BEST support this goal?",
-        "options": ["The opportunity to participate in AWS events and receive discounts on AWS services, allowing the organization to increase their exposure and reduce costs", "The ability to access AWS certification and competency programs to demonstrate expertise in AWS solutions and differentiate from competitors", "Access to AWS technical resources, training, and support to more effectively use AWS services and increase revenue opportunities", "The ability to leverage the AWS global infrastructure, partner programs, and tools to expand market reach and increase revenue"],
-        "answer": [3],
-        "explanation": "The goal is market reach and revenue. Only D addresses both directly; the others focus on cost, credentials or skills.",
-        "link": ""
-      },
-      {
-        "question": "You are selecting block storage to use with your Amazon EC2 instances. This storage must persist after instance restarts. Additionally, you need to be able to back up this storage by creating snapshots. Which AWS service allows you to meet these requirements?",
-        "options": ["Amazon EBS", "Amazon RDS", "Amazon S3", "Instance Store"],
-        "answer": [0],
-        "explanation": "Persistent block storage for EC2 with snapshots → EBS. Instance Store is temporary, and S3 is object storage.",
-        "link": ""
-      },
-      {
-        "question": "You are in charge of managing applications and ensuring they are operating securely in the cloud. You would like to routinely scan your applications for potential vulnerabilities. Which AWS service would meet this requirement?",
-        "options": ["Amazon Inspector", "AWS Artifact", "AWS Shield", "Amazon Macie"],
-        "answer": [0],
-        "explanation": "Vulnerability scanning → Inspector. Artifact = compliance reports, Shield = DDoS protection, Macie = sensitive data in S3.",
-        "link": ""
-      },
-      {
-        "question": "A company is in the process of adopting cloud technology and wants to ensure a successful cloud acquisition. Which of the following should they prioritize as the first step in their strategy?",
-        "options": ["Understand the different cloud service models available.", "Finalize the budget for cloud adoption.", "Create a training plan for current employees to learn cloud technology.", "Migrate all their existing applications to the cloud."],
-        "answer": [0],
-        "explanation": "Understand the options (IaaS, PaaS, SaaS) first; budget, training and migration plans depend on that choice.",
+        "question": "Your company produces periodic compliance reports that must be securely stored for 7 years for auditing purposes. Once the report is available, it is rarely accessed. When requested, a report must be available within 24 hours. What is the MOST cost effective and reliable AWS storage solution to address this use case?",
+        "options": [
+          "Amazon S3 Infrequent Access",
+          "AWS Backup",
+          "Amazon S3 Glacier",
+          "Amazon RDS"
+        ],
+        "answer": [
+          2
+        ],
         "link": ""
       },
       {
         "question": "Your company has a Business Intelligence (BI) team and they have been tasked to build a detailed overall cost intelligence dashboard to visualize cost consumption and provide insights into the trends. They need the source data from AWS to build the dashboard. Which report will provide the source data to build a BI dashboard?",
-        "options": ["Cost and Usage Report", "AWS Budget report", "Reserved Instance report", "Savings Plan report"],
-        "answer": [0],
-        "explanation": "Most detailed cost data for BI tools → Cost and Usage Report (CUR). The other reports cover only budgets, RIs or Savings Plans.",
+        "options": [
+          "Cost and Usage Report",
+          "AWS Budget report",
+          "Reserved Instance report",
+          "Savings Plan report"
+        ],
+        "answer": [
+          0
+        ],
         "link": ""
       },
       {
         "question": "You are a solutions architect designing a new application for the AWS Cloud. This application will need to be frequently changed using DevOps principles to align with customer needs. Which AWS Well-Architected Framework pillar recommends implementing frequent, small and reversible changes?",
-        "options": ["Performance excellence", "Reliability", "Operational Excellence", "Cost optimization"],
-        "answer": [2],
-        "explanation": "Frequent, small, reversible changes → Operational Excellence. Note: \"Performance excellence\" isn't a real pillar (the pillar is Performance Efficiency).",
+        "options": [
+          "Performance excellence",
+          "Reliability",
+          "Operational Excellence",
+          "Cost optimization"
+        ],
+        "answer": [
+          2
+        ],
+        "link": ""
+      },
+      {
+        "question": "You have just joined a company that recently migrated from on-premises to the AWS Cloud. Your team is currently focusing on building effective cost optimization and monitoring tools. Which tool can help identify irregular spend and identify root causes?",
+        "options": [
+          "Cost Explorer",
+          "AWS Cost Anomaly detection",
+          "Savings Plans",
+          "AWS Budgets"
+        ],
+        "answer": [
+          1
+        ],
+        "link": ""
+      },
+      {
+        "question": "A team wants to set up a Continuous Integration and Continuous Deployment pipeline which would speed up the building, testing, and deployment of their code. Which of these job roles would be most suitable to help in this scenario?",
+        "options": [
+          "System Administrator",
+          "DevOps Administrator",
+          "Security Administrator",
+          "Cloud Architect"
+        ],
+        "answer": [
+          1
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is hoping to migrate their on-premises infrastructure to AWS. However, in a recent meeting, the CTO expressed concern about controlling and optimizing the cost of cloud resources. You have been tasked with finding a way to control and automate spending in the cloud. Which AWS service is the most proactive in achieving this goal?",
+        "options": [
+          "AWS Budgets",
+          "AWS Cost and Usage Report",
+          "AWS Trusted Advisor",
+          "AWS Cost Explorer"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "You have proposed to your IT Director to migrate your company's on-premises services to the AWS Cloud. The IT Director has asked you to write a paper to motivate why migrating to AWS Cloud is beneficial to the company. What are some of the benefits of migrating to the AWS Cloud? (Select TWO)",
+        "options": [
+          "AWS is responsible for the security of everything.",
+          "Increase speed and agility.",
+          "Stop guessing capacity.",
+          "High-latency",
+          "Free use of all Amazon Cloud Services"
+        ],
+        "answer": [
+          1,
+          2
+        ],
+        "link": ""
+      },
+      {
+        "question": "An e-commerce company wants to modernize their infrastructure and move it to the AWS Cloud. Which option can BEST assist the company to realize these goals?",
+        "options": [
+          "AWS Partner Network (APN)",
+          "Amazon EC2",
+          "AWS App Runner",
+          "AWS Artifact"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "A small startup company wants to deploy a new web application in the cloud. The company's IT team is familiar with AWS and has decided to use Amazon EC2 for the deployment. The budget is limited and they want to minimize the cost of running the application. Which of the following options should the company choose to minimize the cost of running the application on Amazon EC2? (Select TWO)",
+        "options": [
+          "Dedicated instances",
+          "On-demand instances",
+          "Reserved instances",
+          "Auto-scaling groups",
+          "Spot instances"
+        ],
+        "answer": [
+          2,
+          4
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your application is running on Amazon EC2 instances. Which component of the AWS global infrastructure will you use to make your application resilient and highly available?",
+        "options": [
+          "AWS Outposts",
+          "AWS Data Centers",
+          "AWS Availability Zones",
+          "AWS Edge Locations"
+        ],
+        "answer": [
+          2
+        ],
+        "link": ""
+      },
+      {
+        "question": "A company has its application servers deployed in an AWS region in Amazon VPCs with private and public subnets. The application servers are placed in private subnets and often initiate requests to the internet. Which solution would BEST accomplish this task?",
+        "options": [
+          "Create an internet gateway in the private subnet in the region.",
+          "Create a NAT gateway in a public subnet in one Availability Zone in the region, with a default route in the private subnet pointing to it.",
+          "Create a NAT gateway in a public subnet of each Availability Zone in the region, with a default route in the private subnet pointing to it.",
+          "Create an Network Access Control List to filter traffic to the private subnet."
+        ],
+        "answer": [
+          2
+        ],
+        "link": ""
+      },
+      {
+        "question": "You work as a solutions architect for a recently founded startup that wants to build a dating app that contains customer PII. The development team has already created a prototype locally. You are tasked with setting up the necessary infrastructure in AWS.Which factor do you need to consider when choosing an AWS region?",
+        "options": [
+          "Largest amount of Availability Zones",
+          "Proximity to the nearest airport for rapid emergency support",
+          "Data governance and legal requirements",
+          "Connection to the Internet"
+        ],
+        "answer": [
+          2
+        ],
+        "link": ""
+      },
+      {
+        "question": "An organization is evaluating different aspects to support its AWS Cloud adoption. Which activity is central to support their decision?",
+        "options": [
+          "Procurement",
+          "Sales",
+          "Real Estate",
+          "Marketing"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "AnyCompany is planning to move their infrastructure and workloads to the cloud but they have specific requirements in regards to infrastructure management, security control, and cost considerations. What is the impact of maintaining an on-premises deployment over cloud-based or hybrid deployment?",
+        "options": [
+          "On-premises deployment provides the greatest level of control over infrastructure, while requiring more management and hardware maintenance at greater overall cost.",
+          "On-premises installation is similar to a hybrid deployment, since it balances control and scalability, requiring less maintenance and costs.",
+          "Cloud-based deployment eliminates the need for hardware management, but reduces control and visibility over security.",
+          "On-premises and cloud-based deployments have similar benefits, as the customer controls all security and infrastructure requirements."
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "You are a new enterprise customer and your company has just deployed an application on AWS. You do not have the resources within your company for security testing. How can you BEST perform a penetration test and DDoS simulation to determine how resilient your application is to attacks?",
+        "options": [
+          "Conduct this by yourself",
+          "Log a case with Premium Support",
+          "Contact AWS Professional Services",
+          "Work with a partner from the AWS Partner Network"
+        ],
+        "answer": [
+          3
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company has decided to migrate its infrastructure to AWS. Most staff are unfamiliar with cloud computing, so your team is looking for assistance with migrating, running, and optimizing your cloud workloads. What is the BEST approach to take?",
+        "options": [
+          "Purchase from an AWS Partner, who can design, build, maintain, and/or optimize your cloud environment.",
+          "Urge your company to push back its migration plan, as there is no way to migrate to the cloud without first implementing a training program.",
+          "Purchase directly from AWS, as this is always the easiest and most cost-effective solution.",
+          "Seek out any IT provider who has experience working with IT infrastructure."
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your boss has tasked you with finding a solution to the company's IT infrastructure issues caused by the rapid growth of their product line. Which computing technology provides the scalability and flexibility needed to handle the company's growing web traffic?",
+        "options": [
+          "Hybrid-cloud",
+          "Java based",
+          "On-premises",
+          "Cloud-based"
+        ],
+        "answer": [
+          3
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is designing and building its infrastructure on the AWS Cloud. As a solutions architect, what areas should you focus on to ensure your company is optimizing cost according to the AWS Well-Architected Framework? (Select TWO)",
+        "options": [
+          "Hire additional architects to help setup the environment in the cloud.",
+          "Contract an AWS Partner to assist with your design.",
+          "Select cost effective resource types such as Reserved and Spot instances.",
+          "Control and understand where your money is spent with expenditure awareness.",
+          "Plan to manually provision resources within the environment to match the workload demand."
+        ],
+        "answer": [
+          2,
+          3
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company leadership is considering the idea of moving their infrastructure to the AWS Cloud. What are some of the benefits of cloud computing? (Select TWO)",
+        "options": [
+          "Trade upfront expense for variable expense.",
+          "Choice of specific hardware models.",
+          "No need to manage any systems or data.",
+          "No need to train your employees on cloud computing.",
+          "Increase speed and agility."
+        ],
+        "answer": [
+          0,
+          4
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is looking to migrate databases, servers, and applications to the AWS Cloud. After a careful review, it seems that a lift and shift migration may not be as simple as expected. Employees are not experienced in cloud migrations and are looking for additional support. Who is the BEST contact that could help your company in their AWS Journey?",
+        "options": [
+          "AWS Partner Network",
+          "AWS Support",
+          "Procurement team",
+          "Cloud Service Provider"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "A customer is planning to setup a new workload in the AWS Cloud. Which of the following is a factor to consider when selecting an AWS region for the new workload?",
+        "options": [
+          "Services available within the region",
+          "Size of the region",
+          "Number of Data Centers in each region",
+          "Investment in security"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is new to AWS and has started its cloud adoption journey. You are worried that the company will encounter challenges using traditional procurement strategies and will need to adapt. What are the characteristics of a cloud procurement strategy? (Select TWO)",
+        "options": [
+          "Pay as you go",
+          "Predicable payments",
+          "Outcomes Prioritized",
+          "Risk-adverse",
+          "Lengthy"
+        ],
+        "answer": [
+          0,
+          2
+        ],
+        "link": ""
+      },
+      {
+        "question": "An enterprise is heavily dependent on their on-premises data center and are considering a potential migration to the cloud. One of the major concerns is security. How does AWS maintain the security and privacy of customer data?",
+        "options": [
+          "AWS fulfills security criteria through certifications, accreditation, and other third-party attestations.",
+          "AWS provides different pricing models for all uses.",
+          "AWS trains its users on how to manage services and set up appropriate security protocols.",
+          "AWS relies on its customer to fully maintain its data security."
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "In order to protect your company's sensitive workloads, you were tasked to block access to the application servers from the public internet. You decide to deploy the servers in a private subnet. While you successfully blocked the servers from public access, your applications can no longer fetch critical patches and updates from the Internet. Which Amazon Virtual Private Cloud (VPC) component can help you solve this problem?",
+        "options": [
+          "NAT Gateway",
+          "Network Access Control List (ACL)",
+          "Route table",
+          "Internet Gateway"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company has a predictable workload and the compute resources change very little month over month. The workload is not flexible and needs minimum disruptions. Which is the most cost-effective pricing model?",
+        "options": [
+          "Dedicated Instance",
+          "Spot Instance",
+          "On Demand",
+          "Savings Plans"
+        ],
+        "answer": [
+          3
+        ],
+        "link": ""
+      },
+      {
+        "question": "A company wants to migrate their on-premises database to Amazon EC2. This database holds data that needs to be accessed quickly and requires high performance. Which EC2 instance type would be BEST suited for this scenario?",
+        "options": [
+          "Compute optimized instance",
+          "Accelerated computing instance",
+          "General purpose instance",
+          "Memory optimized instance"
+        ],
+        "answer": [
+          3
+        ],
+        "link": ""
+      },
+      {
+        "question": "You are the solutions architect of a startup that is trying to build a social networking application that needs a graph database. Which database is most suitable for this application?",
+        "options": [
+          "Amazon DocumentDB",
+          "Amazon Neptune",
+          "Amazon Quantum Ledger Database (Amazon QLDB)",
+          "Amazon ElastiCache"
+        ],
+        "answer": [
+          1
+        ],
+        "link": ""
+      },
+      {
+        "question": "A manufacturing company wants to move its on-premises workload to AWS to gain business agility. They recently started the procurement process by reaching out to different Cloud Service Providers (CSP) and asking them about payment modalities. Which departments have to be involved in the process, in addition to the Procurement department? (Select TWO)",
+        "options": [
+          "Marketing",
+          "Logistics",
+          "Finance",
+          "Legal",
+          "IT Hardware"
+        ],
+        "answer": [
+          2,
+          3
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company has fully migrated their infrastructure to the AWS Cloud. The company leadership wants to assign a different account to each department. What service can BEST assist with managing the various AWS accounts?",
+        "options": [
+          "AWS Cost Explorer",
+          "AWS CloudTrail",
+          "AWS Organizations",
+          "AWS Budgets"
+        ],
+        "answer": [
+          2
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your CIO has asked you to reduce operational overhead of maintaining a relational database for an application that is running on Amazon EC2 instances. What are the most appropriate options for running the database? (Select TWO)",
+        "options": [
+          "Amazon Aurora",
+          "Amazon RDS",
+          "Amazon DynamoDB",
+          "Amazon Neptune",
+          "Amazon Redshift"
+        ],
+        "answer": [
+          0,
+          1
+        ],
+        "link": ""
+      },
+      {
+        "question": "An e-commerce application is hosted in an AWS region. The end users are located in various countries across the globe and they require low latency access to the web application content. Which AWS service will BEST achieve this goal?",
+        "options": [
+          "Amazon Route 53",
+          "Amazon CloudFront",
+          "AWS Site-to-Site VPN",
+          "AWS Client VPN"
+        ],
+        "answer": [
+          1
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is migrating to the AWS Cloud. As the network administrator, you are responsible for managing the physical network in the datacenter. What cloud role might you transition to that would be the closest fit to your current role?",
+        "options": [
+          "Cloud Architect",
+          "DevOps Administrator",
+          "Security Administrator",
+          "System Administrator"
+        ],
+        "answer": [
+          3
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is planning to move all its infrastructure to the cloud. Your CFO is thinking about the costs associated with this decision. Which AWS tool can be used to estimate the cost of moving to the AWS Cloud?",
+        "options": [
+          "AWS Pricing Calculator",
+          "AWS Cloud Adoption Framework",
+          "AWS Marketplace",
+          "AWS Budgets"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "As a solutions architect, your goal is to improve reliability of an application that runs on Amazon EC2 instances. What would be your BEST recommendation?",
+        "options": [
+          "Provision larger instance of Amazon EC2 in 2 availability zones and distribute requests across the 2 instances.",
+          "Move to multiple smaller instances in 2 Availability Zones and distribute requests across the instances. Use autoscaling to increase/decrease the number of instances as needed.",
+          "Rearchitect the application to use AWS Lambda to move to a managed service.",
+          "Create a CloudWatch Event rule which matches a CloudWatch Alarm triggering an AWS Lambda to provision a new EC2 instance, if application is not reachable."
+        ],
+        "answer": [
+          1
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is in the process of acquiring cloud technology. Your CISO has asked you to form a team to evaluate the security of potential cloud service providers (CSPs). Which method will help you to ensure the security of the CSP?",
+        "options": [
+          "Conduct a physical audit of the CSP's data center.",
+          "Research existing industry best practices and use third-party auditing to evaluate the CSP.",
+          "All CSPs are secure and do not require further evaluation.",
+          "Formulate a detailed list of the top 100 security controls for your industry and ensure the CSP provides appropriate responses for each."
+        ],
+        "answer": [
+          1
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company has migrated multiple on-premises workloads onto AWS. You have been tasked to assess the cost and usage of AWS services for Fiscal Quarter Q1 and forecast the spend for the next Fiscal Quarter Q2. Which Business Intelligence (BI) tool would enable you to view and analyze your costs and usage in near real-time free of charge with the LEAST management overhead?",
+        "options": [
+          "AWS Cost Explorer",
+          "AWS Trusted Advisor",
+          "AWS Billing Dashboard",
+          "AWS Budgets"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company has begun to modernize and has embraced the cloud due to the many benefits that it provides. After a lengthy migration project, the majority of applications have been moved successfully. However, certain vendors do not support their software on the cloud, therefore these applications will remain on-premises. What is this deployment model called?",
+        "options": [
+          "Hybrid Cloud",
+          "Public Cloud",
+          "Private Cloud",
+          "Community Cloud"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is planning to use AWS for hosting its production workloads. Your manager has tasked you with identifying the AWS service to use for configuring user access and permissions. Which AWS service BEST accomplishes this task?",
+        "options": [
+          "AWS Organizations",
+          "AWS Access Control Lists (ACLs)",
+          "AWS Identity and Access Management (IAM)",
+          "AWS Service Control Policies (SCP)"
+        ],
+        "answer": [
+          2
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your Chief Information Officer wants to know the AWS Cloud service that can be used to monitor cloud services, such as Amazon EC2 and Amazon RDS instances and applications. Which AWS service should you recommend to use?",
+        "options": [
+          "Amazon Trusted Advisor",
+          "Amazon CloudWatch",
+          "Amazon Health",
+          "Amazon S3 Glacier"
+        ],
+        "answer": [
+          1
+        ],
+        "link": ""
+      },
+      {
+        "question": "A company is using AWS services to manage and store their data in the AWS Cloud. To protect their data, they have applied encryption. However, they noticed that their data is getting compromised and leaked. Who is responsible to maintain the data security of this company?",
+        "options": [
+          "The customer is responsible to protect the physical hardware to prevent any data leak.",
+          "It is the customer's responsibility to manage and protect their encryption keys.",
+          "It is the responsibility of AWS because the data was encrypted, but still compromised.",
+          "It is the responsibility of AWS to protect the customer data in their cloud."
+        ],
+        "answer": [
+          1
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your organization is planning on using Amazon EC2 for deploying a web application. What is the responsibility of the organization in this situation?",
+        "options": [
+          "Patching of the guest operating system",
+          "Training of AWS employees",
+          "Configuration of infrastructure devices",
+          "Security of the underlying infrastructure"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "You are no longer able to SSH into the Amazon EC2 instance which was working fine a few days back. After some troubleshooting, you find that someone removed the port 22 inbound rule from the instance security group. You want to know who removed the inbound rule. Which service can you use to get the details?",
+        "options": [
+          "Amazon VPC",
+          "Amazon EC2",
+          "AWS CloudTrail",
+          "Amazon CloudWatch"
+        ],
+        "answer": [
+          2
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is migrating legacy Apache web applications from on-premises to the AWS cloud. Currently, there is not enough cloud expertise within the company so you are tasked with finding the easiest way to migrate and operate workloads in the cloud. Which service will BEST accomplish this task?",
+        "options": [
+          "AWS Elastic Beanstalk",
+          "Amazon EC2",
+          "AWS Lambda",
+          "Amazon ECS"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is looking to optimize its AWS costs and wants to develop a cost optimization program. Which is the most effective approach for creating a cost optimization program in AWS?",
+        "options": [
+          "Implement AWS Trusted Advisor and use its recommendations to optimize costs.",
+          "Create custom scripts and use them to automate cost optimization processes.",
+          "Implement AWS Cost Explorer and use it to analyze resource utilization and cost trends.",
+          "Regularly monitor and manually reduce usage of AWS resources that are not needed."
+        ],
+        "answer": [
+          2
+        ],
+        "link": ""
+      },
+      {
+        "question": "A customer would like to design and build a new workload on the AWS Cloud but does not have the AWS expertise to get started. Which AWS program can a customer take advantage of to achieve that outcome?",
+        "options": [
+          "AWS technical account managers (TAMs)",
+          "AWS Marketplace",
+          "AWS Support",
+          "AWS Partner Network (APN) Consulting Partners"
+        ],
+        "answer": [
+          3
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is currently hosting its data and services in the AWS Cloud and wants help to control cost and spend. Which AWS service can help with this?",
+        "options": [
+          "AWS Budgets",
+          "Billing Dashboard",
+          "AWS CloudWatch",
+          "AWS Support Plans"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your organization is planning to migrate its on-premises infrastructure to the cloud. You are currently reviewing cloud service providers (CSPs) and want to ensure that your organization gets the best fit with a CSP and the most favorable terms and conditions. Which of the following is a key consideration when evaluating a CSPs terms and conditions?",
+        "options": [
+          "Engage CSPs early to get the best fit and resolve any differences.",
+          "Skip terms and conditions, as these are typically used minimally and are more of a legal formality.",
+          "Recognize that all CSPs generally have the same terms and conditions.",
+          "Reuse traditional IT contract terms to facilitate the process."
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your company is preparing for the holiday shopping season where there will be an increase in traffic and customer orders for its Amazon EC2-hosted applications. What service can be used to enable optimal availability to handle the increased traffic?",
+        "options": [
+          "Amazon RDS",
+          "Amazon EC2 Auto Scaling",
+          "AWS CloudWatch",
+          "AWS Lambda"
+        ],
+        "answer": [
+          1
+        ],
+        "link": ""
+      },
+      {
+        "question": "A multinational company decides to move all its on-premises infrastructure to the AWS Cloud. Which AWS Support Plan includes access to a Technical Account Manager (TAM)?",
+        "options": [
+          "Business Support",
+          "Basic Support",
+          "Developer Support",
+          "Enterprise Support"
+        ],
+        "answer": [
+          3
+        ],
+        "link": ""
+      },
+      {
+        "question": "An e-commerce company is looking to migrate some of its workloads to AWS. While planning the migration, the CTO has asked if AWS handles patching for the operating system running on the Amazon EC2 instances. Which option can provide clarity to the CTO?",
+        "options": [
+          "Cloud computing deployment models",
+          "AWS Cloud Adoption Framework",
+          "AWS Well-Architected Framework",
+          "AWS Shared Responsibility Model"
+        ],
+        "answer": [
+          3
+        ],
+        "link": ""
+      },
+      {
+        "question": "Your e-commerce website has been experiencing slow load times and high latency, especially for customers in regions that are far away from your server location. Which AWS service uses Edge Locations to reduce latency?",
+        "options": [
+          "Amazon Elastic Load Balancing",
+          "AWS Direct Connect",
+          "Amazon CloudFront",
+          "AWS CloudTrail"
+        ],
+        "answer": [
+          2
+        ],
+        "link": ""
+      },
+      {
+        "question": "An organization is looking to expand its presence and revenue in the AWS ecosystem. Which benefit of joining the Amazon Partner Network (APN) would BEST support this goal?",
+        "options": [
+          "The opportunity to participate in AWS events and receive discounts on AWS services, allowing the organization to increase their exposure and reduce costs",
+          "The ability to access AWS certification and competency programs to demonstrate expertise in AWS solutions and differentiate from competitors",
+          "Access to AWS technical resources, training, and support to more effectively use AWS services and increase revenue opportunities",
+          "The ability to leverage the AWS global infrastructure, partner programs, and tools to expand market reach and increase revenue"
+        ],
+        "answer": [
+          3
+        ],
+        "link": ""
+      },
+      {
+        "question": "You are selecting block storage to use with your Amazon EC2 instances. This storage must persist after instance restarts. Additionally, you need to be able to back up this storage by creating snapshots. Which AWS service allows you to meet these requirements?",
+        "options": [
+          "Amazon EBS",
+          "Amazon RDS",
+          "Amazon S3",
+          "Instance Store"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "You are in charge of managing applications and ensuring they are operating securely in the cloud. You would like to routinely scan your applications for potential vulnerabilities. Which AWS service would meet this requirement?",
+        "options": [
+          "Amazon Inspector",
+          "AWS Artifact",
+          "AWS Shield",
+          "Amazon Macie"
+        ],
+        "answer": [
+          0
+        ],
+        "link": ""
+      },
+      {
+        "question": "A company is in the process of adopting cloud technology and wants to ensure a successful cloud acquisition. Which of the following should they prioritize as the first step in their strategy?",
+        "options": [
+          "Understand the different cloud service models available.",
+          "Finalize the budget for cloud adoption.",
+          "Create a training plan for current employees to learn cloud technology.",
+          "Migrate all their existing applications to the cloud."
+        ],
+        "answer": [
+          0
+        ],
         "link": ""
       }
     ]
