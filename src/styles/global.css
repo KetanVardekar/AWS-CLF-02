@@ -56,6 +56,10 @@ h2 { font-size: 1.2rem; margin: 0 0 10px; }
 @media (max-width: 480px) { .brand { display: none; } }
 
 /* Cheat sheet */
+.sheet-tools { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+.sheet-tools .search { flex: 1; min-width: 220px; margin-bottom: 0; }
+.switch { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; cursor: pointer; user-select: none; white-space: nowrap; }
+.switch input { accent-color: var(--accent); width: 18px; height: 18px; }
 .search { width: 100%; padding: 10px 14px; font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 14px; }
 .search:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 .toc { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
@@ -69,6 +73,10 @@ td { padding: 9px 14px; border-top: 1px solid var(--border); vertical-align: top
 tbody tr:first-child td { border-top: 0; }
 tbody tr:hover { background: var(--accent-soft); }
 td.concept { font-weight: 700; color: var(--accent); }
+tr.clickable { cursor: pointer; }
+td.hidden { color: transparent; text-shadow: 0 0 9px var(--muted); user-select: none; }
+td.revealed { animation: reveal 0.35s ease; }
+@keyframes reveal { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
 /* Exam list */
 .exam-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
@@ -78,11 +86,22 @@ td.concept { font-weight: 700; color: var(--accent); }
 
 /* Exam page */
 .back { display: inline-block; margin-bottom: 4px; text-decoration: none; }
-.scorebar { position: sticky; top: 57px; z-index: 5; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 10px 14px; margin-bottom: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+.scorebar { position: sticky; top: 57px; z-index: 5; padding: 10px 14px; margin-bottom: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+.scorebar-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .scorebar .btn { margin-left: auto; }
+.progress { height: 6px; margin-top: 10px; border-radius: 999px; background: var(--border); overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 999px; background: var(--accent); transition: width 0.4s ease, background 0.4s; }
+.progress-fill.pass { background: var(--good); }
+.progress-fill.fail { background: var(--bad); }
+.streak { font-weight: 700; color: var(--accent); animation: pop 0.35s ease; }
+@keyframes pop { 0% { transform: scale(0.6); opacity: 0; } 70% { transform: scale(1.15); } 100% { transform: scale(1); opacity: 1; } }
+kbd { font-family: ui-monospace, Consolas, monospace; font-size: 0.8em; padding: 1px 6px; border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 5px; background: var(--surface); color: var(--text); }
 .btn { padding: 7px 14px; font: inherit; font-weight: 600; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; }
 .questions { padding-left: 1.6em; margin: 0; }
-.question { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; }
+.question { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; scroll-margin-top: 140px; transition: border-color 0.2s, box-shadow 0.2s; }
+.question.active { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.question.is-right { border-color: color-mix(in srgb, var(--good) 45%, var(--border)); }
+.question.is-wrong { border-color: color-mix(in srgb, var(--bad) 45%, var(--border)); }
 .question::marker { font-weight: 700; color: var(--muted); }
 .q-text { font-weight: 600; margin: 0 0 10px; }
 .hint { color: var(--accent); font-size: 0.85rem; font-weight: 600; margin: -4px 0 8px; }
@@ -96,7 +115,9 @@ td.concept { font-weight: 700; color: var(--accent); }
 .option.dim { opacity: 0.55; }
 .letter { flex: none; font-weight: 800; width: 1.4em; }
 .result { margin: 10px 0 0; font-weight: 600; }
-.final { text-align: center; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+.final { text-align: center; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; animation: pop 0.4s ease; }
+.final.pass { border-color: var(--good); background: var(--good-soft); }
+.final.fail { border-color: var(--bad); }
 
 /* Wrong answer: shake */
 .shake { animation: shake 0.45s ease; border-color: var(--bad); }
@@ -107,6 +128,13 @@ td.concept { font-weight: 700; color: var(--accent); }
   60% { transform: translateX(-6px); }
   80% { transform: translateX(6px); }
 }
-@media (prefers-reduced-motion: reduce) { .shake { animation: none; } }
+/* Correct answer: green pulse */
+.pulse { animation: pulse 0.5s ease; }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--good) 55%, transparent); transform: scale(1); }
+  40% { transform: scale(1.015); }
+  100% { box-shadow: 0 0 0 14px transparent; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) { .shake, .pulse, .streak, .final { animation: none; } }
 
 .footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
