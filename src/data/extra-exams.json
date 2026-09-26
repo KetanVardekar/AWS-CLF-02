@@ -1,0 +1,113 @@
+[
+  {
+    "id": 24,
+    "title": "Extra Set 1",
+    "questions": [
+      {
+        "question": "Your customer wants to know how security and compliance is shared between AWS and the customer. Under the AWS Shared Responsibility Model, what are your suggested shared controls between the customer and AWS? (Select TWO)",
+        "options": ["Patch Management", "Awareness and Training", "Data Encryption", "Physical and Environmental controls", "Identity and access management"],
+        "answer": [0, 1],
+        "explanation": "AWS lists three shared controls: Patch Management, Configuration Management, and Awareness & Training. Physical controls are AWS only; data encryption and IAM are the customer's responsibility.",
+        "link": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+      },
+      {
+        "question": "A company would like to monitor all of the API activity inside their AWS account. Which AWS service would track the API activity?",
+        "options": ["AWS CloudTrail", "Amazon CloudWatch", "Amazon Inspector", "Amazon CloudFront"],
+        "answer": [0],
+        "explanation": "API activity / who did what → CloudTrail. CloudWatch is metrics and alarms, Inspector scans for vulnerabilities, CloudFront is a CDN.",
+        "link": ""
+      },
+      {
+        "question": "A customer would like to design and build a new workload on the AWS Cloud but does not have the AWS expertise to get started. Which AWS program can a customer take advantage of to achieve that outcome?",
+        "options": ["AWS technical account managers (TAMs)", "AWS Marketplace", "AWS Support", "AWS Partner Network (APN) Consulting Partners"],
+        "answer": [3],
+        "explanation": "No in-house expertise + need someone to design and build → APN Consulting Partners. TAMs and Support give guidance, they don't build your workload.",
+        "link": ""
+      },
+      {
+        "question": "Your company is currently hosting its data and services in the AWS Cloud and wants help to control cost and spend. Which AWS service can help with this?",
+        "options": ["AWS Budgets", "Billing Dashboard", "AWS CloudWatch", "AWS Support Plans"],
+        "answer": [0],
+        "explanation": "Control spend / alert on thresholds → AWS Budgets. The Billing Dashboard only shows spend; it doesn't help you control it.",
+        "link": ""
+      },
+      {
+        "question": "Your organization is planning to migrate its on-premises infrastructure to the cloud. You are currently reviewing cloud service providers (CSPs) and want to ensure that your organization gets the best fit with a CSP and the most favorable terms and conditions. Which of the following is a key consideration when evaluating a CSP's terms and conditions?",
+        "options": ["Engage CSPs early to get the best fit and resolve any differences.", "Skip terms and conditions, as these are typically used minimally and are more of a legal formality.", "Recognize that all CSPs generally have the same terms and conditions.", "Reuse traditional IT contract terms to facilitate the process."],
+        "answer": [0],
+        "explanation": "Engaging CSPs early lets you understand their terms and negotiate differences. Terms differ between providers, and old on-premises contract terms don't fit cloud services.",
+        "link": ""
+      },
+      {
+        "question": "Your company is preparing for the holiday shopping season where there will be an increase in traffic and customer orders for its Amazon EC2-hosted applications. What service can be used to enable optimal availability to handle the increased traffic?",
+        "options": ["Amazon RDS", "Amazon EC2 Auto Scaling", "AWS CloudWatch", "AWS Lambda"],
+        "answer": [1],
+        "explanation": "Traffic spike on EC2 → EC2 Auto Scaling adds instances when demand rises and removes them afterwards.",
+        "link": ""
+      },
+      {
+        "question": "A multinational company decides to move all its on-premises infrastructure to the AWS Cloud. Which AWS Support Plan includes access to a Technical Account Manager (TAM)?",
+        "options": ["Business Support", "Basic Support", "Developer Support", "Enterprise Support"],
+        "answer": [3],
+        "explanation": "Designated TAM → Enterprise Support. Business, Developer and Basic plans don't include a TAM.",
+        "link": ""
+      },
+      {
+        "question": "An e-commerce company is looking to migrate some of its workloads to AWS. While planning the migration, the CTO has asked if AWS handles patching for the operating system running on the Amazon EC2 instances. Which option can provide clarity to the CTO?",
+        "options": ["Cloud computing deployment models", "AWS Cloud Adoption Framework", "AWS Well-Architected Framework", "AWS Shared Responsibility Model"],
+        "answer": [3],
+        "explanation": "Who patches what → Shared Responsibility Model. For EC2, the customer patches the guest OS; AWS handles the underlying infrastructure.",
+        "link": ""
+      },
+      {
+        "question": "Your e-commerce website has been experiencing slow load times and high latency, especially for customers in regions that are far away from your server location. Which AWS service uses Edge Locations to reduce latency?",
+        "options": ["Amazon Elastic Load Balancing", "AWS Direct Connect", "Amazon CloudFront", "AWS CloudTrail"],
+        "answer": [2],
+        "explanation": "Edge Locations + lower latency for distant users → CloudFront, which caches content close to users.",
+        "link": ""
+      },
+      {
+        "question": "An organization is looking to expand its presence and revenue in the AWS ecosystem. Which benefit of joining the Amazon Partner Network (APN) would BEST support this goal?",
+        "options": ["The opportunity to participate in AWS events and receive discounts on AWS services, allowing the organization to increase their exposure and reduce costs", "The ability to access AWS certification and competency programs to demonstrate expertise in AWS solutions and differentiate from competitors", "Access to AWS technical resources, training, and support to more effectively use AWS services and increase revenue opportunities", "The ability to leverage the AWS global infrastructure, partner programs, and tools to expand market reach and increase revenue"],
+        "answer": [3],
+        "explanation": "The goal is market reach and revenue. Only D addresses both directly; the others focus on cost, credentials or skills.",
+        "link": ""
+      },
+      {
+        "question": "You are selecting block storage to use with your Amazon EC2 instances. This storage must persist after instance restarts. Additionally, you need to be able to back up this storage by creating snapshots. Which AWS service allows you to meet these requirements?",
+        "options": ["Amazon EBS", "Amazon RDS", "Amazon S3", "Instance Store"],
+        "answer": [0],
+        "explanation": "Persistent block storage for EC2 with snapshots → EBS. Instance Store is temporary, and S3 is object storage.",
+        "link": ""
+      },
+      {
+        "question": "You are in charge of managing applications and ensuring they are operating securely in the cloud. You would like to routinely scan your applications for potential vulnerabilities. Which AWS service would meet this requirement?",
+        "options": ["Amazon Inspector", "AWS Artifact", "AWS Shield", "Amazon Macie"],
+        "answer": [0],
+        "explanation": "Vulnerability scanning → Inspector. Artifact = compliance reports, Shield = DDoS protection, Macie = sensitive data in S3.",
+        "link": ""
+      },
+      {
+        "question": "A company is in the process of adopting cloud technology and wants to ensure a successful cloud acquisition. Which of the following should they prioritize as the first step in their strategy?",
+        "options": ["Understand the different cloud service models available.", "Finalize the budget for cloud adoption.", "Create a training plan for current employees to learn cloud technology.", "Migrate all their existing applications to the cloud."],
+        "answer": [0],
+        "explanation": "Understand the options (IaaS, PaaS, SaaS) first; budget, training and migration plans depend on that choice.",
+        "link": ""
+      },
+      {
+        "question": "Your company has a Business Intelligence (BI) team and they have been tasked to build a detailed overall cost intelligence dashboard to visualize cost consumption and provide insights into the trends. They need the source data from AWS to build the dashboard. Which report will provide the source data to build a BI dashboard?",
+        "options": ["Cost and Usage Report", "AWS Budget report", "Reserved Instance report", "Savings Plan report"],
+        "answer": [0],
+        "explanation": "Most detailed cost data for BI tools → Cost and Usage Report (CUR). The other reports cover only budgets, RIs or Savings Plans.",
+        "link": ""
+      },
+      {
+        "question": "You are a solutions architect designing a new application for the AWS Cloud. This application will need to be frequently changed using DevOps principles to align with customer needs. Which AWS Well-Architected Framework pillar recommends implementing frequent, small and reversible changes?",
+        "options": ["Performance excellence", "Reliability", "Operational Excellence", "Cost optimization"],
+        "answer": [2],
+        "explanation": "Frequent, small, reversible changes → Operational Excellence. Note: \"Performance excellence\" isn't a real pillar (the pillar is Performance Efficiency).",
+        "link": ""
+      }
+    ]
+  }
+]

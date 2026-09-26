@@ -48,6 +48,8 @@ export interface ExamQuestion {
   answer: number[];
   /** Optional reference link from the source */
   link: string;
+  /** Optional one-line "why" shown after answering */
+  explanation?: string;
 }
 
 export interface Exam {

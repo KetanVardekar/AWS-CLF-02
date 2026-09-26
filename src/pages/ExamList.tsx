@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
-import exams from '../data/exams.json';
-import type { Exam } from '../data/types';
+import { EXAMS } from '../data/exams';
 import { loadScore } from './ExamPage';
 
 export function ExamList() {
   return (
     <>
       <h1>Practice Exams</h1>
-      <p className="lead">{(exams as Exam[]).length} practice exams. Click an answer to check it straight away.</p>
+      <p className="lead">{EXAMS.length} practice exams. Click an answer to check it straight away.</p>
       <div className="exam-grid">
-        {(exams as Exam[]).map((e) => {
+        {EXAMS.map((e) => {
           const score = loadScore(e.id);
           return (
             <Link key={e.id} to={`/exams/${e.id}`} className="exam-card">

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
-import exams from '../data/exams.json';
-import type { Exam, ExamQuestion } from '../data/types';
+import { EXAMS } from '../data/exams';
+import type { ExamQuestion } from '../data/types';
 
 const LETTERS = 'ABCDEF';
 const PASS_PCT = 70;
@@ -22,7 +22,7 @@ export function loadScore(id: number): Score | null {
 
 export function ExamPage() {
   const { id } = useParams();
-  const exam = (exams as Exam[]).find((e) => String(e.id) === id);
+  const exam = EXAMS.find((e) => String(e.id) === id);
   // Result per question index: true = correct, false = wrong
   const [results, setResults] = useState<Record<number, boolean>>({});
   const [streak, setStreak] = useState(0);
@@ -193,6 +193,7 @@ function QuestionItem({ index, q, active, register, onResult }: ItemProps) {
           )}
         </p>
       )}
+      {done && q.explanation && <p className="why">💡 {q.explanation}</p>}
     </li>
   );
 }
