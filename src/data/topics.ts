@@ -30,3 +30,36 @@ export const TOPICS: Topic[] = [
 ];
 
 export const topicById = Object.fromEntries(TOPICS.map(t => [t.id, t])) as Record<Topic['id'], Topic>;
+
+/**
+ * Where each cheat-sheet topic sits in the official CLF-C02 syllabus
+ * (domain + task statements, see syllabus.ts). Order here = display order.
+ */
+export const TOPIC_SYLLABUS: { topic: Topic['id']; domain: 1 | 2 | 3 | 4; tasks: string[] }[] = [
+  { topic: 'cloud-concepts', domain: 1, tasks: ['1.1', '1.4'] },
+  { topic: 'high-availability', domain: 1, tasks: ['1.1'] },
+  { topic: 'scalability', domain: 1, tasks: ['1.1'] },
+  { topic: 'well-architected', domain: 1, tasks: ['1.2'] },
+  { topic: 'reliability', domain: 1, tasks: ['1.2'] },
+  { topic: 'migration', domain: 1, tasks: ['1.3', '3.4'] },
+  { topic: 'shared-responsibility', domain: 2, tasks: ['2.1'] },
+  { topic: 'iam-security', domain: 2, tasks: ['2.2', '2.3', '2.4'] },
+  { topic: 'monitoring', domain: 3, tasks: ['3.1', '2.2'] },
+  { topic: 'global-infra', domain: 3, tasks: ['3.2'] },
+  { topic: 'disaster-recovery', domain: 3, tasks: ['3.2'] },
+  { topic: 'compute', domain: 3, tasks: ['3.3'] },
+  { topic: 'scaling-lb', domain: 3, tasks: ['3.3'] },
+  { topic: 'serverless', domain: 3, tasks: ['3.3'] },
+  { topic: 'containers', domain: 3, tasks: ['3.3'] },
+  { topic: 'databases', domain: 3, tasks: ['3.4'] },
+  { topic: 'networking', domain: 3, tasks: ['3.5'] },
+  { topic: 'route53-cloudfront', domain: 3, tasks: ['3.5'] },
+  { topic: 'storage', domain: 3, tasks: ['3.6'] },
+  { topic: 'analytics', domain: 3, tasks: ['3.7'] },
+  { topic: 'ai-ml', domain: 3, tasks: ['3.7'] },
+  { topic: 'integration', domain: 3, tasks: ['3.8'] },
+  { topic: 'ec2-pricing', domain: 4, tasks: ['4.1'] },
+  { topic: 'billing', domain: 4, tasks: ['4.2'] },
+  { topic: 'organizations', domain: 4, tasks: ['4.2'] },
+  { topic: 'support', domain: 4, tasks: ['4.3'] },
+];

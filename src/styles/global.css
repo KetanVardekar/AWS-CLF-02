@@ -185,3 +185,17 @@ kbd { font-family: ui-monospace, Consolas, monospace; font-size: 0.8em; padding:
 .task-body h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 8px 0 4px; }
 .task-body ul { margin: 0; padding-left: 18px; }
 .task-body li { margin: 2px 0; }
+
+/* Cheat sheet grouped by exam domain */
+.toc-domains { display: grid; gap: 10px; margin-bottom: 26px; }
+.toc-domain { padding: 10px 12px; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--dom); border-radius: 10px; }
+.toc-domain-name { display: inline-block; font-weight: 700; color: var(--text); text-decoration: none; margin-bottom: 8px; }
+.toc-domain-name span { color: var(--dom); margin-left: 4px; }
+.toc-domain .toc { margin-bottom: 0; }
+.sheet-domain { margin-bottom: 34px; }
+.sheet-domain-title { font-size: 1.35rem; padding: 10px 14px; margin: 0 0 16px; border-radius: 10px; color: #fff; background: var(--dom); scroll-margin-top: calc(var(--topbar-h) + 12px); }
+.sheet-domain-title .muted { color: rgba(255, 255, 255, 0.8); font-weight: 500; font-size: 0.95rem; }
+.topic-title { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 1.12rem; margin: 0 0 10px; }
+.task-tags { display: inline-flex; gap: 4px; }
+.task-tag { font-size: 0.72rem; font-weight: 700; padding: 2px 7px; border-radius: 6px; color: var(--dom); border: 1px solid var(--dom); background: var(--surface); }
+.topic { scroll-margin-top: calc(var(--topbar-h) + 12px); }
