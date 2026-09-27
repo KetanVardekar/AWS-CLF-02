@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { EXAMS } from '../data/exams';
-import { LastScore } from '../components/QuestionList';
 
 export function ExamList() {
   return (
@@ -13,7 +12,6 @@ export function ExamList() {
             <Link key={e.id} to={`/exams/${e.id}`} className="exam-card">
               <strong>{e.title}</strong>
               <span className="muted">{e.questions.length} questions</span>
-              <LastScore storageKey={`clf-exam-${e.id}`} total={e.questions.length} />
             </Link>
           );
         })}

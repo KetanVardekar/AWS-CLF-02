@@ -11,7 +11,7 @@ export function ExamPage() {
     <>
       <Link to="/exams" className="back">← All exams</Link>
       <h1>{exam.title}</h1>
-      <QuestionList key={exam.id} questions={exam.questions} storageKey={`clf-exam-${exam.id}`} />
+      <QuestionList key={exam.id} questions={exam.questions} />
     </>
   );
 }

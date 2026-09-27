@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { CATEGORIES, QUESTIONS_BY_CATEGORY } from '../data/categories';
 import { DOMAINS } from '../data/syllabus';
-import { LastScore } from '../components/QuestionList';
 
 export function Categories() {
   return (
@@ -28,7 +27,6 @@ export function Categories() {
                     <strong>{c.emoji} {c.name}</strong>
                     <span className="muted small">{c.blurb}</span>
                     <span className="muted">{count} questions</span>
-                    <LastScore storageKey={`clf-cat-${c.id}`} total={count} />
                   </Link>
                 );
               })}

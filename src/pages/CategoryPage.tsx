@@ -28,7 +28,7 @@ export function CategoryPage() {
         <h1>{category.emoji} {category.name}</h1>
         <button className="btn btn-ghost" onClick={() => setOrder((o) => o + 1)}>🔀 Shuffle</button>
       </div>
-      <QuestionList key={`${category.id}-${order}`} questions={questions} storageKey={`clf-cat-${category.id}`} />
+      <QuestionList key={`${category.id}-${order}`} questions={questions} />
     </>
   );
 }
