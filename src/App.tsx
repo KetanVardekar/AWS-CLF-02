@@ -1,9 +1,10 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { HashRouter, NavLink, Navigate, Route, Routes } from 'react-router-dom';
 import { CheatSheet } from './pages/CheatSheet';
 // Exams carry ~1,100 questions, so they load only when opened.
 const ExamList = lazy(() => import('./pages/ExamList').then((m) => ({ default: m.ExamList })));
 const ExamPage = lazy(() => import('./pages/ExamPage').then((m) => ({ default: m.ExamPage })));
+const Syllabus = lazy(() => import('./pages/Syllabus').then((m) => ({ default: m.Syllabus })));
 const Categories = lazy(() => import('./pages/Categories').then((m) => ({ default: m.Categories })));
 const CategoryPage = lazy(() => import('./pages/CategoryPage').then((m) => ({ default: m.CategoryPage })));
 
@@ -21,6 +22,18 @@ function initialTheme(): Theme {
 
 export function App() {
   const [theme, setTheme] = useState<Theme>(initialTheme);
+  const header = useRef<HTMLElement>(null);
+
+  // Sticky bars below the header need its real height (it grows when the nav wraps on phones).
+  useEffect(() => {
+    const el = header.current;
+    if (!el) return;
+    const update = () => document.documentElement.style.setProperty('--topbar-h', `${el.offsetHeight}px`);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -33,13 +46,14 @@ export function App() {
 
   return (
     <HashRouter>
-      <header className="topbar">
+      <header className="topbar" ref={header}>
         <div className="topbar-inner">
           <NavLink to="/" className="brand">☁️ CLF-C02 Prep</NavLink>
           <nav>
             <NavLink to="/" end>Cheat Sheet</NavLink>
-            <NavLink to="/exams">Practice Exams</NavLink>
-            <NavLink to="/categories">By Category</NavLink>
+            <NavLink to="/exams"><span className="long">Practice </span>Exams</NavLink>
+            <NavLink to="/categories"><span className="long">By </span><span className="long">Category</span><span className="short">Categories</span></NavLink>
+            <NavLink to="/syllabus">Syllabus</NavLink>
           </nav>
           <button className="theme-btn" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label="Toggle theme">
             {theme === 'dark' ? '☀️' : '🌙'}
@@ -52,6 +66,7 @@ export function App() {
             <Route path="/" element={<CheatSheet />} />
             <Route path="/exams" element={<ExamList />} />
             <Route path="/exams/:id" element={<ExamPage />} />
+            <Route path="/syllabus" element={<Syllabus />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/categories/:id" element={<CategoryPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
