@@ -199,3 +199,5 @@ kbd { font-family: ui-monospace, Consolas, monospace; font-size: 0.8em; padding:
 .task-tags { display: inline-flex; gap: 4px; }
 .task-tag { font-size: 0.72rem; font-weight: 700; padding: 2px 7px; border-radius: 6px; color: var(--dom); border: 1px solid var(--dom); background: var(--surface); }
 .topic { scroll-margin-top: calc(var(--topbar-h) + 12px); }
+.cat-domain { margin-bottom: 30px; }
+.cat-domain .exam-card { border-left: 3px solid var(--dom); }

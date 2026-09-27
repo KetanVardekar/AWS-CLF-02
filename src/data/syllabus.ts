@@ -148,7 +148,7 @@ export const DOMAINS: Domain[] = [
     id: 3,
     name: 'Cloud Technology and Services',
     weight: 34,
-    categories: ['infra', 'compute', 'databases', 'networking', 'storage', 'management', 'migration', 'other'],
+    categories: ['management', 'infra', 'compute', 'databases', 'migration', 'networking', 'storage', 'other'],
     tasks: [
       {
         id: '3.1',
