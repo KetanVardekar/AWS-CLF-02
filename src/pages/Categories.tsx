@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CATEGORIES, QUESTIONS_BY_CATEGORY } from '../data/categories';
 import { DOMAINS } from '../data/syllabus';
-import { loadScore } from '../components/QuestionList';
+import { LastScore } from '../components/QuestionList';
 
 export function Categories() {
   return (
@@ -23,13 +23,12 @@ export function Categories() {
             <div className="exam-grid category-grid">
               {cats.map((c) => {
                 const count = QUESTIONS_BY_CATEGORY[c.id].length;
-                const score = loadScore(`clf-cat-${c.id}`);
                 return (
                   <Link key={c.id} to={`/categories/${c.id}`} className="exam-card">
                     <strong>{c.emoji} {c.name}</strong>
                     <span className="muted small">{c.blurb}</span>
                     <span className="muted">{count} questions</span>
-                    {score && <span className="best">Last: {score.correct}/{score.answered} correct</span>}
+                    <LastScore storageKey={`clf-cat-${c.id}`} total={count} />
                   </Link>
                 );
               })}

@@ -18,6 +18,20 @@ export function loadScore(storageKey: string): Score | null {
   }
 }
 
+/** "Last try" summary for exam/category cards: accuracy on answered questions plus how far the user got. */
+export function LastScore({ storageKey, total }: { storageKey: string; total: number }) {
+  const score = loadScore(storageKey);
+  if (!score || !score.answered) return null;
+  const pct = Math.round((score.correct / score.answered) * 100);
+  const finished = score.answered >= total;
+  return (
+    <span className={`last-score ${pct >= PASS_PCT ? 'good' : 'bad'}`}>
+      Last try: {score.correct}/{score.answered} correct ({pct}%)
+      <span className="muted"> · {finished ? 'finished' : `answered ${score.answered} of ${total}`}</span>
+    </span>
+  );
+}
+
 /**
  * A practice list: instant feedback per question, score bar, streak,
  * progress bar and keyboard answering. Used by exams and categories.
@@ -78,6 +92,11 @@ export function QuestionList({ questions, storageKey }: { questions: ExamQuestio
   };
 
   const reset = () => {
+    try {
+      localStorage.removeItem(storageKey);
+    } catch {
+      /* ignore */
+    }
     setResults({});
     setStreak(0);
     setAttempt((a) => a + 1);
