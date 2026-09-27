@@ -49,11 +49,11 @@ h2 { font-size: 1.2rem; margin: 0 0 10px; }
 .topbar { position: sticky; top: 0; z-index: 10; background: var(--surface); border-bottom: 1px solid var(--border); }
 .topbar-inner { max-width: 980px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 16px; }
 .brand { font-weight: 800; color: var(--text); text-decoration: none; white-space: nowrap; }
-.topbar nav { display: flex; gap: 4px; flex: 1; }
+.topbar nav { display: flex; gap: 4px; flex: 1; overflow-x: auto; }
 .topbar nav a { padding: 6px 12px; border-radius: 8px; color: var(--muted); text-decoration: none; font-weight: 600; white-space: nowrap; }
 .topbar nav a.active { background: var(--accent-soft); color: var(--accent); }
 .theme-btn { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; width: 36px; height: 36px; cursor: pointer; font-size: 1rem; }
-@media (max-width: 480px) { .brand { display: none; } }
+@media (max-width: 560px) { .brand { display: none; } .topbar nav a { padding: 6px 8px; font-size: 0.9rem; } }
 
 /* Cheat sheet */
 .sheet-tools { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
@@ -83,6 +83,11 @@ td.revealed { animation: reveal 0.35s ease; }
 .exam-card { display: flex; flex-direction: column; gap: 4px; padding: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; color: var(--text); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
 .exam-card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .best { font-size: 0.85rem; color: var(--good); font-weight: 600; }
+.small { font-size: 0.85rem; }
+.category-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
+.btn-ghost:hover { border-color: var(--accent); }
 
 /* Exam page */
 .back { display: inline-block; margin-bottom: 4px; text-decoration: none; }

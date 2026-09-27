@@ -4,6 +4,8 @@ import { CheatSheet } from './pages/CheatSheet';
 // Exams carry ~1,100 questions, so they load only when opened.
 const ExamList = lazy(() => import('./pages/ExamList').then((m) => ({ default: m.ExamList })));
 const ExamPage = lazy(() => import('./pages/ExamPage').then((m) => ({ default: m.ExamPage })));
+const Categories = lazy(() => import('./pages/Categories').then((m) => ({ default: m.Categories })));
+const CategoryPage = lazy(() => import('./pages/CategoryPage').then((m) => ({ default: m.CategoryPage })));
 
 type Theme = 'light' | 'dark';
 
@@ -37,6 +39,7 @@ export function App() {
           <nav>
             <NavLink to="/" end>Cheat Sheet</NavLink>
             <NavLink to="/exams">Practice Exams</NavLink>
+            <NavLink to="/categories">By Category</NavLink>
           </nav>
           <button className="theme-btn" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label="Toggle theme">
             {theme === 'dark' ? '☀️' : '🌙'}
@@ -49,6 +52,8 @@ export function App() {
             <Route path="/" element={<CheatSheet />} />
             <Route path="/exams" element={<ExamList />} />
             <Route path="/exams/:id" element={<ExamPage />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/categories/:id" element={<CategoryPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
